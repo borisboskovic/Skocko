@@ -1,0 +1,101 @@
+body {
+    background: radial-gradient(#245ea6, #0b2043);
+}
+
+.glavni-panel {
+    width: 400px;
+    display: inline-block;
+}
+
+.jedan-red {
+    background-color: #0b2043;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.polja {
+    display: inline-block;
+    margin: 5px 0px 0px 10px;
+}
+
+.jedno-polje {
+    display: inline-block;
+    background-color:#bef0ff;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.indikatori {
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    margin: 0px 10px;
+}
+
+.jedan-indikator {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #245ea6;
+}
+
+.tasteri {
+    background-color: #0b2043;
+    display: inline-block;
+    width: 81px;
+    padding: 10px 0px;
+    border-radius: 15px;
+}
+
+.jedan-taster {
+    display: inline-block;
+    background-color: #bef0ff;
+    width: 65px;
+    height: 65px;
+    margin: 4px 8px 4px 8px;
+    border-radius: 8px;
+}
+
+.jedan-taster img {
+    width: 65px;
+    height: 65px;
+}
+
+.taster0 {
+    background-image: url("../img/sova.png");
+    background-size: contain;
+}
+.taster1 {
+    background-image: url("../img/tref.png");
+    background-size: contain;
+}
+.taster2 {
+    background-image: url("../img/pik.png");
+    background-size: contain;
+}
+.taster3 {
+    background-image: url("../img/herc.png");
+    background-size: contain;
+}
+.taster4 {
+    background-image: url("../img/karo.png");
+    background-size: contain;
+}
+.taster5 {
+    background-image: url("../img/zvijezda.png");
+    background-size: contain;
+}
+
+.potvrda {
+    background-color: #bef0ff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    padding: 10px 30px;
+    display: inline-block;
+    border-radius: 10px;
+}
