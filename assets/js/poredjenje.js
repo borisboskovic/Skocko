@@ -9,13 +9,28 @@ for (var i = 0; i < 4; i++) {
 }
 
 
-document.getElementsByClassName("potvrda")[0].addEventListener("click", provjera);
+document.getElementsByClassName("potvrda")[0].addEventListener("click", potvrda);
 
 
-function provjera() {
+
+//Metoda koja se poziva klikom na dugme potvrdi
+//Boji indikatore u zavisnosti od provjerenog odgovora
+function potvrda() {
+    //Prvi dio metode porvjerava da li su zadovoljeni uslovi za nastavak izvrsavanja
+    //Potrebno je da igra vec nije rijesena (rejeseno==false)
+    //Potrebno je da je svaki elemenat niza popunjenost jednak true
     if (rijeseno) {
         return;
     }
+    var provjeraDozvoljena = true;
+    for (var k = 0; k < 4; k++) {
+        if (popunjenost[k] == false)
+            provjeraDozvoljena = false;
+    }
+    if (provjeraDozvoljena == false) {
+        return;
+    }
+
     var podudaranja = prebrojavanje();
     var indikatori = redovi[aktivniRed].children[1].children;
     for (var i = 0; i < podudaranja[0]; i++) {
@@ -30,6 +45,7 @@ function provjera() {
     }
     popunjenost = [false, false, false, false]
 }
+
 
 
 //Vraca niz od dva elementa gdje je [0] broj potpunih podudaranja a [1] broj djelimicnih podudaranja
