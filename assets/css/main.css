@@ -1,3 +1,7 @@
+* {
+    user-select: none;
+}
+
 body {
     background: radial-gradient(#245ea6, #0b2043);
 }
@@ -21,7 +25,7 @@ body {
 
 .jedno-polje {
     display: inline-block;
-    background-color:#bef0ff;
+    background-color: #bef0ff;
     background-size: contain;
     width: 50px;
     height: 50px;
@@ -69,22 +73,27 @@ body {
     background-image: url("../img/sova.png");
     background-size: contain;
 }
+
 .taster1 {
     background-image: url("../img/tref.png");
     background-size: contain;
 }
+
 .taster2 {
     background-image: url("../img/pik.png");
     background-size: contain;
 }
+
 .taster3 {
     background-image: url("../img/herc.png");
     background-size: contain;
 }
+
 .taster4 {
     background-image: url("../img/karo.png");
     background-size: contain;
 }
+
 .taster5 {
     background-image: url("../img/zvijezda.png");
     background-size: contain;
