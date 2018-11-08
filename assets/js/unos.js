@@ -43,22 +43,23 @@ for (var i = 0; i < polja.length; i++) {
 
 //Metoda koja se aktivira na dogadjaj kilka na jedan od tastera
 function klikNaTaster(e) {
+    if (aktivniRed > 6 || rijeseno)
+        return;
     var trenutnoPolje = polja[aktivniRed][indeksAktivnogPolja()];
     if (indeksAktivnogPolja() != -1) {
         var indeksTastera = dohvatiIndeksTastera(e);
         var indeksPolja = indeksAktivnogPolja();
         polja[aktivniRed][indeksPolja].style.backgroundImage = znakoviTastera[indeksTastera];
         popunjenost[indeksPolja] = true;
-
     }
 }
 
 //Metoda koja se aktivira na dogadjaj kilka na jedno od polja
 function klikNaPolje(e) {
     var indeksPolja = dohvatiIndeksPolja(e);
-    if(popunjenost[indeksPolja]==true){
-        popunjenost[indeksPolja]=false;
-        polja[aktivniRed][indeksPolja].style.backgroundImage="";
+    if (popunjenost[indeksPolja] == true) {
+        popunjenost[indeksPolja] = false;
+        polja[aktivniRed][indeksPolja].style.backgroundImage = "";
     }
 }
 

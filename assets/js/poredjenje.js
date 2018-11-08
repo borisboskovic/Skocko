@@ -1,4 +1,5 @@
 var zadatiZnakovi = [];
+var rijeseno = false;
 
 //Random odabir zadanih znakova
 for (var i = 0; i < 4; i++) {
@@ -10,7 +11,29 @@ for (var i = 0; i < 4; i++) {
 
 document.getElementsByClassName("potvrda")[0].addEventListener("click", provjera);
 
+
 function provjera() {
+    if (rijeseno) {
+        return;
+    }
+    var podudaranja = prebrojavanje();
+    var indikatori = redovi[aktivniRed].children[1].children;
+    for (var i = 0; i < podudaranja[0]; i++) {
+        indikatori[i].style.backgroundColor = "red";
+    }
+    for (var j = podudaranja[0]; j < podudaranja[0] + podudaranja[1]; j++) {
+        indikatori[j].style.backgroundColor = "yellow";
+    }
+    aktivniRed++;
+    if (podudaranja[0] == 4) {
+        rijeseno = true;
+    }
+    popunjenost = [false, false, false, false]
+}
+
+
+//Vraca niz od dva elementa gdje je [0] broj potpunih podudaranja a [1] broj djelimicnih podudaranja
+function prebrojavanje() {
     for (var i = 0; i < popunjenost.length; i++) {
         if (popunjenost[i] == false) {
             return;
@@ -23,11 +46,9 @@ function provjera() {
 
     var brojPodudaranja = prebrojSvaPodudaranja(uneseniZnakovi);
     var potpunaPodudaranja = prebrojPotpunaPodudaranja(uneseniZnakovi);
+    var djelimicnaPodudaranje = brojPodudaranja - potpunaPodudaranja;
 
-    console.log(brojPodudaranja);
-    console.log(potpunaPodudaranja);
-
-
+    return [potpunaPodudaranja, djelimicnaPodudaranje];
 }
 
 function prebrojSvaPodudaranja(nizUnesenih) {
@@ -42,11 +63,9 @@ function prebrojSvaPodudaranja(nizUnesenih) {
 
 function prebrojPotpunaPodudaranja(nizUnesenih) {
     var brojPodudaranja = 0;
-    var zadani = prebrojZnakove(zadatiZnakovi);
-    var uneseni = prebrojZnakove(nizUnesenih);
-    for (var k = 0; k < 4; k++) {
-        if (uneseni[k] == zadani[k]) {
-            brojPodudaranja+=uneseni[k];
+    for (var i = 0; i < 4; i++) {
+        if (nizUnesenih[i] === zadatiZnakovi[i]) {
+            brojPodudaranja++;
         }
     }
     return brojPodudaranja;
